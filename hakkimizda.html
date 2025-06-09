@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakkımızda - Serintaş Nakliyat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+
+    header h2 {
+       margin-right: 8px;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      padding: 10px 18px;
+      background-color: #2563eb;
+      color: #fff;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #1e40af;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2563eb;
+    }
+
+    .hero {
+      position: relative;
+      background: url('img/arkaplan.jpg') no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      position: relative;
+      color: white;
+      font-size: 3rem;
+      z-index: 1;
+      text-align: center;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    main h2 {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+
+    .map-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .hero h1 { font-size: 2rem; }
+
+      .menu-toggle { display: block; }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        margin-top: 10px;
+        box-shadow: none;
+      }
+
+      nav a {
+        margin: 10px 0;
+        padding: 12px 20px;
+        border-radius: 0;
+        background-color: transparent;
+        color: #2563eb;
+      }
+
+      nav.show { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2><i class="fas fa-truck-moving"></i> Serintaş Nakliyat</h2>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <nav id="nav-links">
+      <a href="index.html">Anasayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="index.html#hizmetler">Hizmetler</a>
+      <a href="index.html#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hakkımızda</h1>
+	
+  </section>
+  
+
+  <main>
+    <h2>Biz Kimiz?</h2>
+    <p>Serintaş Nakliyat, Ankara merkezli olarak faaliyet gösteren, taşımacılık alanında yılların verdiği tecrübe ve müşteri memnuniyetini ön planda tutan profesyonel bir nakliyat firmasıdır.</p>
+
+    <p>Evden eve nakliyat, şehirler arası taşımacılık, ofis taşıma ve parça eşya taşımacılığı gibi birçok alanda hizmet sunmaktayız. Müşterilerimize güvenilir, zamanında ve uygun maliyetli çözümler sunmak temel ilkemizdir.</p>
+
+    <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+    <ul>
+      <li>Deneyimli ve güler yüzlü ekip</li>
+      <li>Sigortalı ve garantili taşımacılık</li>
+      <li>Modern ve bakımlı taşıma araçları</li>
+      <li>Uygun fiyat garantisi</li>
+      <li>7/24 destek ve iletişim imkânı</li>
+    </ul>
+
+    <h2>Vizyonumuz</h2>
+    <p>Türkiye’nin her noktasına kaliteli, güvenli ve çevreye duyarlı taşımacılık hizmeti sunmak; sektörde öncü ve örnek gösterilen bir firma haline gelmektir.</p>
+
+    <h2>Misyonumuz</h2>
+    <p>Müşteri memnuniyetini en üst düzeyde tutarak, ihtiyaçlara özel çözümlerle taşımacılık süreçlerini kolaylaştırmak ve güven vermektir.</p>
+  </main>
+
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.1604181377575!2d32.974878711167186!3d39.9601659713979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3537757b72ea3%3A0x248560e736971038!2zxZ5laGnMh3QgT251ciBEb8SfYW4gQ2FkZGVzaQ!5e0!3m2!1str!2sfr!4v1746965470491!5m2!1str!2sfr" 
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+   <footer style="background:#2563eb; color:#fff; text-align:center; padding:20px;">
+  <div style="padding-bottom: 15px;">
+    <a href="https://mail.google.com/mail/?view=cm&to=seriintassnakliyat@gmail.com" target="_blank" style="margin: 0 10px; color: #fff;" title="Gmail ile Gönder">
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+    <a href="https://instagram.com/seriintassnakliyat" target="_blank" style="margin: 0 10px; color: #fff;" title="Instagram">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61576131159654" target="_blank" style="margin: 0 10px; color: #fff;" title="Facebook">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+  </div>
+  &copy; 2025 Serintaş Nakliyat. Tüm Hakları Saklıdır.
+</footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serintaş Nakliyat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+      z-index: 1000;
+    }
+
+    header h2 {
+      margin-right: 8px;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #2563eb;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #1e40af;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2563eb;
+    }
+
+    .hero-image {
+      margin-top: 100px;
+      background: url('img/paketleme.jpg') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-overlay p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #2563eb;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service {
+      background: #fff;
+      flex: 1 1 220px;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: scale(1.05);
+    }
+
+    .service i {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact i {
+      color: #f97316;
+      margin-right: 10px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scroll düzeltmeleri */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    [id]::before {
+      content: "";
+      display: block;
+      height: 100px;
+      margin-top: -100px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+     nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+
+
+      nav a {
+        margin: 10px 0;
+        padding: 12px 20px;
+        background-color: transparent;
+        color: #2563eb;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hero-image {
+        height: 60vh;
+        background-position: center top;
+      }
+
+      .hero-overlay h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-overlay p {
+        font-size: 1rem;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+	section {
+  scroll-margin-top: 100px;
+}
+footer a:hover {
+  color: #facc15;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2><i class="fas fa-truck-moving"></i> Serintaş Nakliyat</h2>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <nav id="nav-links">
+      <a href="index.html">Anasayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="hero-image fade-in">
+    <div class="hero-overlay">
+      <h1>Serintaş Nakliyat</h1>
+      <p>Güvenli, Hızlı ve Profesyonel Taşımacılık</p>
+    </div>
+  </section>
+
+  <section id="hizmetler">
+    <h2 class="section-title">Hizmetlerimiz</h2>
+    <div class="services">
+      <div class="service fade-in">
+        <i class="fas fa-box"></i>
+        <h3>Evden Eve Nakliyat</h3>
+        <p>Profesyonel ekip ile paketleme dahil hızlı taşımacılık.</p>
+      </div>
+      <div class="service fade-in">
+        <i class="fas fa-building"></i>
+        <h3>Ofis ve Kurumsal Taşıma</h3>
+        <p>İşyeri taşımalarda minimum zaman kaybı.</p>
+      </div>
+      <div class="service fade-in">
+        <i class="fas fa-road"></i>
+        <h3>Şehirler Arası Taşımacılık</h3>
+        <p>Türkiye'nin her yerine zamanında teslimat.</p>
+      </div>
+      <div class="service fade-in">
+        <i class="fas fa-dolly"></i>
+        <h3>Parça Eşya Taşıma</h3>
+        <p>Az eşyalar için ekonomik çözümler.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2 class="section-title">İletişim</h2>
+    <div class="contact fade-in">
+	  <p><i class="fas fa-phone-alt"></i> <a href="tel:+905531026786">+90 553 102 67 86</a></p>
+	  <p><i class="fas fa-phone-alt"></i> <a href="tel:+905056922236">+90 505 692 22 36</a></p>
+      <p><i class="fas fa-envelope"></i>seriintassnakliyat@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i>Karapürçek Mahallesi Şehit Onur Doğan Caddesi, Altındağ / ANKARA</p>
+      <p><i class="fas fa-clock"></i>Pazartesi - Cumartesi: 08:00 – 20:00</p>
+      <a class="whatsapp" href="https://wa.me/905531026786" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp ile İletişime Geç
+      </a>
+    </div>
+  </section>
+
+  <section id="konum" style="padding: 40px 20px;">
+  <h2 class="section-title">Konumumuz</h2>
+  <div style="
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  ">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.1604181377575!2d32.974878711167186!3d39.9601659713979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3537757b72ea3%3A0x248560e736971038!2zxZ5laGnMh3QgT251ciBEb8SfYW4gQ2FkZGVzaQ!5e0!3m2!1str!2sfr!4v1746965470491!5m2!1str!2sfr" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+ <footer style="background:#2563eb; color:#fff; text-align:center; padding:20px;">
+  <div style="padding-bottom: 15px;">
+    <a href="https://mail.google.com/mail/?view=cm&to=seriintassnakliyat@gmail.com" target="_blank" style="margin: 0 10px; color: #fff;" title="Gmail ile Gönder">
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+    <a href="https://instagram.com/seriintassnakliyat" target="_blank" style="margin: 0 10px; color: #fff;" title="Instagram">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61576131159654" target="_blank" style="margin: 0 10px; color: #fff;" title="Facebook">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+  </div>
+  &copy; 2025 Serintaş Nakliyat. Tüm Hakları Saklıdır.
+</footer>
+
+
+  <script>
+    // Görsel fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Menü aç/kapa
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => nav.classList.toggle('show'));
+
+    // Mobil tıklama dışında menüyü kapat
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('show');
+      }
+    });
+
+    // Scroll hedefi düzelt
+    window.addEventListener("load", () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const el = document.querySelector(hash);
+        if (el) {
+          window.scrollTo({ top: el.offsetTop - 100, behavior: "smooth" });
+        }
+      }
+    });
+	// Menü içindeki bağlantıya tıklandığında menüyü kapat
+document.querySelectorAll('#nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('show');
+  });
+});
+
+  </script>
+  
+</body>
+</html>
